@@ -21,6 +21,27 @@
             // Update the copy to clipboard buttons with color codes
             document.getElementById("rgbCopyBtn").setAttribute("data-clipboard-text", rgbColor);
             document.getElementById("hexCopyBtn").setAttribute("data-clipboard-text", hexColor);
+
+            // Reset the copy button text and style
+            var copyBtns = document.getElementsByClassName("copy-btn");
+            for (var i = 0; i < copyBtns.length; i++) {
+                copyBtns[i].innerHTML = "Copy";
+                copyBtns[i].classList.remove("copied");
+            }
+        }
+
+        function copyTextToClipboard(btn) {
+            var text = btn.getAttribute("data-clipboard-text");
+            var tempElement = document.createElement("textarea");
+            tempElement.value = text;
+            document.body.appendChild(tempElement);
+            tempElement.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempElement);
+
+            // Update the copy button text and style
+            btn.innerHTML = "Copied!";
+            btn.classList.add("copied");
         }
 
         // Generate a random color when the page loads
@@ -32,6 +53,15 @@
         h1, h2, button, p {
             margin: 10px;
         }
+
+        .copy-btn {
+            cursor: pointer;
+        }
+
+        .copied {
+            background-color: #22cc22;
+            color: #ffffff;
+        }
     </style>
 </head>
 <body>
@@ -39,13 +69,9 @@
     <button onclick="generateRandomColor()">Generate Random Color</button>
     <h2 id="rgbText"></h2>
     <h2 id="hexText"></h2>
-    <button id="rgbCopyBtn" class="copy-btn" data-clipboard-target="#rgbText">Copy RGB</button>
-    <button id="hexCopyBtn" class="copy-btn" data-clipboard-target="#hexText">Copy Hex</button>
+    <button id="rgbCopyBtn" class="copy-btn" data-clipboard-target="#rgbText" onclick="copyTextToClipboard(this)">Copy RGB</button>
+    <button id="hexCopyBtn" class="copy-btn" data-clipboard-target="#hexText" onclick="copyTextToClipboard(this)">Copy Hex</button>
     <p>This tool can generate 16,777,216 different colors.</p>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script> <!-- Include ClipboardJS library -->
-    <script>
-        // ClipboardJS library for copying text to clipboard
-        new ClipboardJS('.copy-btn');
-    </script>
 </body>
 </html>
