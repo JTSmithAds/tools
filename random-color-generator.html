@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Color Generator</title>
+    <script>
+        function generateRandomColor() {
+            // Generate random values for red, green, and blue channels
+            var red = Math.floor(Math.random() * 256);
+            var green = Math.floor(Math.random() * 256);
+            var blue = Math.floor(Math.random() * 256);
+            // Construct the RGB color string
+            var rgbColor = "rgb(" + red + ", " + green + ", " + blue + ")";
+            // Construct the hexadecimal color string
+            var hexColor = "#" + ((1 << 24) | (red << 16) | (green << 8) | blue).toString(16).slice(1);
+            // Set the background color of the body element
+            document.body.style.backgroundColor = rgbColor;
+            // Update the color text in the HTML
+            document.getElementById("rgbText").innerHTML = "RGB: " + rgbColor;
+            document.getElementById("hexText").innerHTML = "Hex: " + hexColor;
+
+            // Update the copy to clipboard buttons with color codes
+            document.getElementById("rgbCopyBtn").setAttribute("data-clipboard-text", rgbColor);
+            document.getElementById("hexCopyBtn").setAttribute("data-clipboard-text", hexColor);
+        }
+
+        // Generate a random color when the page loads
+        window.onload = function() {
+            generateRandomColor();
+        };
+    </script>
+    <style>
+        h1, h2, button, p {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Random Color Generator</h1>
+    <button onclick="generateRandomColor()">Generate Random Color</button>
+    <h2 id="rgbText"></h2>
+    <h2 id="hexText"></h2>
+    <button id="rgbCopyBtn" class="copy-btn" data-clipboard-target="#rgbText">Copy RGB</button>
+    <button id="hexCopyBtn" class="copy-btn" data-clipboard-target="#hexText">Copy Hex</button>
+    <p>This tool can generate 16,777,216 different colors.</p>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script> <!-- Include ClipboardJS library -->
+    <script>
+        // ClipboardJS library for copying text to clipboard
+        new ClipboardJS('.copy-btn');
+    </script>
+</body>
+</html>
