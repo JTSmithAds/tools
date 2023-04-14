@@ -38,10 +38,21 @@
       margin-top: 10px;
       font-weight: bold;
     }
+    .assets-label {
+      margin-top: 20px;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    .liabilities-label {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
   <div class="calculator">
+    <div class="assets-label">Assets</div>
     <label for="cashSavings">Cash and Savings:</label>
     <input type="number" id="cashSavings" step="0.01">
     <label for="investments">Investments:</label>
@@ -50,6 +61,7 @@
     <input type="number" id="realEstate" step="0.01">
     <label for="otherAssets">Other Assets:</label>
     <input type="number" id="otherAssets" step="0.01">
+    <div class="liabilities-label">Liabilities</div>
     <label for="creditCardDebt">Credit Card Debt:</label>
     <input type="number" id="creditCardDebt" step="0.01">
     <label for="studentLoans">Student Loans:</label>
