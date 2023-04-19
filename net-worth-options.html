@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- Google tag (gtag.js) -->
+        <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JRV01Q04V1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -36,14 +36,14 @@
       p {
         font-size: 1.2em;
         text-align: center;
-        margin-bottom: 10px;
+        margin-bottom: 30px;
       }
       
       button {
         display: block;
         width: 100%;
         padding: 15px 30px;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
         font-size: 1.2em;
         text-align: center;
         background-color: #4CAF50;
@@ -62,11 +62,31 @@
   <body>
     <div class="container">
       <h1>Net Worth Calculator</h1>
-      <p>Choose a calculator:</p>
       <p>1. Auto-Calculate - import your accounts, track your net worth over time, get precise numbers.</p>
       <p>2. Simple Calculator - manually enter in your numbers and get an estimate.</p>
-      <button onclick="window.location.href='https://track.flexlinkspro.com/g.ashx?foid=156074.13439.1058727&trid=1112571.157618&foc=16&fot=1005&fos=5';">Auto-Calculate</button>
-      <button class="secondary" onclick="window.location.href='/tools/net-worth-calculator.html';">Simple Calculator</button>
+      <button id="auto-calculate">Auto-Calculate</button>
+      <button id="simple-calculator" class="secondary">Simple Calculator</button>
     </div>
+    <script>
+      // Get the gclid value from the URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const gclid = urlParams.get('gclid');
+
+      // Attach the gclid parameter to the Auto-Calculate button URL
+      const autoCalculateButton = document.getElementById('auto-calculate');
+      autoCalculateButton.addEventListener('click', function() {
+        const autoCalculateUrl = 'https://track.flexlinkspro.com/g.ashx?foid=156074.13439.1058727&trid=1112571.157618&foc=16&fot=1005&fos=5';
+        const autoCalculateUrlWithGclid = `${autoCalculateUrl}&fobs=${gclid}`;
+        window.location.href = autoCalculateUrlWithGclid;
+      });
+
+      // Attach the gclid parameter to the Simple Calculator button URL
+      const simpleCalculatorButton = document.getElementById('simple-calculator');
+      simpleCalculatorButton.addEventListener('click', function() {
+        const simpleCalculatorUrl = '/tools/net-worth-calculator.html';
+        const simpleCalculatorUrlWithGclid = `${simpleCalculatorUrl}?gclid=${gclid}`;
+        window.location.href = simpleCalculatorUrlWithGclid;
+      });
+    </script>
   </body>
 </html>
