@@ -3,51 +3,102 @@
 <head>
   <title>Net Worth Calculator</title>
   <style>
-    /* CSS styles for net worth calculator */
-    body {
-      font-family: Arial, sans-serif;
-    }
-    .calculator {
-      max-width: 400px;
-      margin: 0 auto;
-      padding: 20px;
-      background-color: #f7f7f7;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-    .calculator label, .calculator input {
-      display: block;
-      margin-bottom: 10px;
-    }
-    .calculator input {
-      width: 100%;
-      padding: 5px;
-      font-size: 16px;
-    }
-    .calculator button {
-      width: 100%;
-      padding: 10px;
-      font-size: 16px;
-      background-color: #007bff;
-      color: #fff;
-      border: none;
-      border-radius: 3px;
-      cursor: pointer;
-    }
-    .calculator #result {
-      margin-top: 10px;
-      font-weight: bold;
-    }
-    .assets-label {
-      margin-top: 20px;
-      margin-bottom: 10px;
-      font-weight: bold;
-    }
-    .liabilities-label {
-      margin-top: 10px;
-      margin-bottom: 10px;
-      font-weight: bold;
-    }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+form > div {
+  flex-basis: 45%;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+input[type="submit"] {
+  background-color: #4CAF50;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.asset-section,
+.liability-section {
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+}
+
+.asset-section h3,
+.liability-section h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.total-section {
+  margin-top: 20px;
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.total-section h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+  form > div {
+    flex-basis: 100%;
+  }
+}
   </style>
 </head>
 <body>
