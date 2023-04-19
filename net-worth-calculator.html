@@ -3,7 +3,7 @@
 <head>
   <title>Net Worth Calculator</title>
   <style>
-* {
+  * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -16,7 +16,7 @@ body {
 }
 
 .container {
-  max-width: 600px;
+  max-width: 100%;
   margin: 0 auto;
   background-color: #fff;
   border-radius: 10px;
@@ -36,17 +36,39 @@ form {
 }
 
 form > div {
-  flex-basis: 45%;
+  flex-basis: 100%;
   margin-bottom: 20px;
 }
 
-label {
-  display: block;
+@media only screen and (min-width: 768px) {
+  form > div {
+    flex-basis: calc(50% - 20px);
+    margin-right: 20px;
+  }
+
+  form > div:nth-child(2n) {
+    margin-right: 0;
+  }
+}
+
+.label-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 5px;
   font-weight: bold;
 }
 
-input[type="number"] {
+.label-container label {
+  flex-basis: 70%;
+}
+
+.label-container span {
+  flex-basis: 30%;
+  text-align: right;
+}
+
+.input-container input[type="number"] {
   width: 100%;
   padding: 10px;
   border-radius: 5px;
@@ -54,7 +76,12 @@ input[type="number"] {
   font-size: 16px;
 }
 
-input[type="submit"] {
+.input-container .currency-symbol {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.submit-container input[type="submit"] {
   background-color: #4CAF50;
   border: none;
   color: #fff;
@@ -94,11 +121,6 @@ input[type="submit"] {
   font-size: 20px;
 }
 
-@media only screen and (max-width: 768px) {
-  form > div {
-    flex-basis: 100%;
-  }
-}
   </style>
 </head>
 <body>
