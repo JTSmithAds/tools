@@ -3,7 +3,7 @@
 <head>
   <title>Net Worth Calculator</title>
   <style>
-  * {
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -16,7 +16,7 @@ body {
 }
 
 .container {
-  max-width: 100%;
+  max-width: 800px;
   margin: 0 auto;
   background-color: #fff;
   border-radius: 10px;
@@ -33,42 +33,21 @@ form {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  font-size: 18px;
 }
 
 form > div {
-  flex-basis: 100%;
+  flex-basis: calc(50% - 10px);
   margin-bottom: 20px;
 }
 
-@media only screen and (min-width: 768px) {
-  form > div {
-    flex-basis: calc(50% - 20px);
-    margin-right: 20px;
-  }
-
-  form > div:nth-child(2n) {
-    margin-right: 0;
-  }
-}
-
-.label-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+label {
+  display: block;
   margin-bottom: 5px;
   font-weight: bold;
 }
 
-.label-container label {
-  flex-basis: 70%;
-}
-
-.label-container span {
-  flex-basis: 30%;
-  text-align: right;
-}
-
-.input-container input[type="number"] {
+input[type="number"] {
   width: 100%;
   padding: 10px;
   border-radius: 5px;
@@ -76,12 +55,7 @@ form > div {
   font-size: 16px;
 }
 
-.input-container .currency-symbol {
-  font-weight: bold;
-  font-size: 16px;
-}
-
-.submit-container input[type="submit"] {
+input[type="submit"] {
   background-color: #4CAF50;
   border: none;
   color: #fff;
@@ -105,7 +79,7 @@ form > div {
 .asset-section h3,
 .liability-section h3 {
   margin-bottom: 10px;
-  font-size: 20px;
+  font-size: 24px;
 }
 
 .total-section {
@@ -118,10 +92,23 @@ form > div {
 
 .total-section h3 {
   margin-bottom: 10px;
-  font-size: 20px;
+  font-size: 24px;
 }
 
-  </style>
+@media only screen and (max-width: 768px) {
+  form > div {
+    flex-basis: 100%;
+  }
+
+  input[type="number"], input[type="submit"], label {
+    font-size: 16px;
+  }
+
+  .container {
+    max-width: 400px;
+  }
+}
+ </style>
 </head>
 <body>
   <div class="calculator">
