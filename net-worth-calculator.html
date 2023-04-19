@@ -181,6 +181,35 @@ input[type="submit"] {
       resultDiv.textContent = "Net Worth: $" + netWorth.toFixed(2);
     }
   </script>
+<script>
+  function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+  }
+
+  function appendGclidToLinks() {
+    var links = document.getElementsByTagName('a');
+    var gclid = getParameterByName('gclid');
+
+    for (var i = 0; i < links.length; i++) {
+      var link = links[i];
+      var href = link.getAttribute('href');
+      if (href.indexOf('?') !== -1) {
+        href += '&fobs=' + gclid;
+      } else {
+        href += '?fobs=' + gclid;
+      }
+      link.setAttribute('href', href);
+    }
+  }
+
+  appendGclidToLinks();
+</script>
   <a href="https://track.flexlinkspro.com/g.ashx?foid=156074.13439.1058727&trid=1112571.157618&foc=16&fot=1005&fos=5">Get a More Precise Net Worth Calculation. See How It Changes Over Time</a>
 </body>
 </html>
