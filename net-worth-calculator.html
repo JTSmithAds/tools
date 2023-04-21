@@ -107,7 +107,7 @@
     <input type="number" id="mortgage" step="0.01">
     <label for="otherLiabilities">Other Liabilities:</label>
     <input type="number" id="otherLiabilities" step="0.01">
-    <button onclick="calculateNetWorth()">Calculate</button>
+    <button onclick="calculateNetWorth()" id="calculate-button">Calculate</button>
     <div id="result"></div>
   </div>
   <a href="https://track.flexlinkspro.com/g.ashx?foid=156074.13439.1058727&trid=1112571.157618&foc=16&fot=1005&fos=5">Get a More Precise Net Worth Calculation. See How It Changes Over Time</a>
@@ -186,7 +186,7 @@ function trackInputCompletion() {
     });
   });
 }
-document.getElementById('calculate_button_id').addEventListener('click', function() {
+document.getElementById('calculate_button').addEventListener('click', function() {
     var net_worth_value = document.getElementById('net_worth_id').value;
     ga('send', 'event', 'Calculated', 'Net Worth', net_worth_value);
         gtag("event", "CalcResult", {
