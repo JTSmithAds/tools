@@ -11,80 +11,104 @@
   gtag('config', 'G-JRV01Q04V1');
 </script>
   <title>Net Worth Calculator</title>
-  <style>
-.calculator-container {
-  max-width: 600px; /* Change this value as needed */
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #f2f2f2;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
+   <style>
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.4;
+      background-color: #f2f2f2;
+    }
+    
+    .calculator-container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
 
-.calculator-title {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
+    .calculator-title {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-align: center;
+    }
 
-.calculator-input {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-}
+    .calculator-input {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
 
-.calculator-input label {
-  font-size: 18px;
-  font-weight: bold;
-  margin-right: 10px;
-}
+    .calculator-input label {
+      width: 100%;
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
 
-.calculator-input input {
-  flex: 1;
-  padding: 5px;
-  font-size: 16px;
-  border-radius: 5px;
-  border: none;
-}
+    .calculator-input input {
+      flex: 1;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
 
-.calculator-input input:focus {
-  outline: none;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-}
+    .calculator-input input:focus {
+      outline: none;
+      border-color: #4CAF50;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
 
-.calculator-button {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
+    .calculator-button {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
 
-.calculator-button button {
-  padding: 10px 20px;
-  font-size: 18px;
-  font-weight: bold;
-  color: white;
-  background-color: #4CAF50;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
+    .calculator-button button {
+      padding: 10px 20px;
+      font-size: 20px;
+      font-weight: bold;
+      color: white;
+      background-color: #4CAF50;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
 
-.calculator-button button:hover {
-  background-color: #3e8e41;
-}
-  
-@media screen and (max-width: 768px) {
-  .calculator-input {
-    flex-direction: column;
-  }
-  
-  .calculator-input input {
-    margin-top: 5px;
-    max-width: 300px;
-  }
-}
- </style>
-</head>
+    .calculator-button button:hover {
+      background-color: #3e8e41;
+    }
+
+    .result-label {
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    .result-value {
+      font-size: 28px;
+      font-weight: bold;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    @media screen and (max-width: 768px) {
+      .calculator-input {
+        flex-direction: column;
+      }
+      
+      .calculator-input input {
+        margin-top: 5px;
+        width: 100%;
+      }
+    }
+  </style>
+  </head>
 <body>
   <div class="calculator">
     <h1>Net Worth Calculator</h1>
