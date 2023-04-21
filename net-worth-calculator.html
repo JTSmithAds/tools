@@ -186,14 +186,6 @@ function trackInputCompletion() {
     });
   });
 }
-document.getElementById('calculate_button').addEventListener('click', function() {
-    var net_worth_value = document.getElementById('net_worth_id').value;
-    ga('send', 'event', 'Calculated', 'Net Worth', net_worth_value);
-        gtag("event", "CalcResult", {
-  result_name: "Net Worth",
-  result_value: net_worth_value,
-});
-});
 </script>
 </body>
 </html>
