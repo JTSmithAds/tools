@@ -12,113 +12,75 @@
 </script>
   <title>Net Worth Calculator</title>
   <style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f2f2f2;
-  padding: 20px;
-}
-
-.container {
-  max-width: 800px;
+.calculator-container {
+  max-width: 600px; /* Change this value as needed */
   margin: 0 auto;
-  background-color: #fff;
+  padding: 20px;
+  background-color: #f2f2f2;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  padding: 20px;
 }
 
-h1 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-a {
-  text-align: center;
-    }
-
-form {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  font-size: 18px;
-}
-
-form > div {
-  flex-basis: calc(50% - 10px);
-  margin-bottom: 20px;
-}
-
-label {
-  display: block;
-  margin-bottom: 5px;
+.calculator-title {
+  font-size: 24px;
   font-weight: bold;
+  margin-bottom: 20px;
 }
 
-input[type="number"] {
-  width: 100%;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+.calculator-input {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.calculator-input label {
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.calculator-input input {
+  flex: 1;
+  padding: 5px;
   font-size: 16px;
+  border-radius: 5px;
+  border: none;
 }
 
-input[type="submit"] {
+.calculator-input input:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.calculator-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.calculator-button button {
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
   background-color: #4CAF50;
   border: none;
-  color: #fff;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
   border-radius: 5px;
   cursor: pointer;
 }
 
-.asset-section,
-.liability-section {
-  margin-bottom: 20px;
-  padding: 10px;
-  border-radius: 5px;
-  background-color: #f2f2f2;
+.calculator-button button:hover {
+  background-color: #3e8e41;
 }
-
-.asset-section h3,
-.liability-section h3 {
-  margin-bottom: 10px;
-  font-size: 24px;
-}
-
-.total-section {
-  margin-top: 20px;
-  background-color: #4CAF50;
-  color: #fff;
-  padding: 10px;
-  border-radius: 5px;
-}
-
-.total-section h3 {
-  margin-bottom: 10px;
-  font-size: 24px;
-}
-
-@media only screen and (max-width: 768px) {
-  form > div {
-    flex-basis: 100%;
+  
+@media screen and (max-width: 768px) {
+  .calculator-input {
+    flex-direction: column;
   }
-
-  input[type="number"], input[type="submit"], label {
-    font-size: 16px;
-  }
-
-  .container {
-    max-width: 400px;
+  
+  .calculator-input input {
+    margin-top: 5px;
+    max-width: 300px;
   }
 }
  </style>
